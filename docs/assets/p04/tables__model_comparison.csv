@@ -1,0 +1,5 @@
+,test_c_index,test_integrated_brier_score,test_brier_t25,test_brier_t50,test_brier_t100,test_rul_rmse,test_rul_mae,test_nasa_score,val_c_index,bayes_rhat_max,bayes_ess_bulk_min,bayes_divergences,bayes_elpd_loo,bayes_p_loo,bayes_looic,bayes_pareto_k_max,bayes_elpd_waic,bayes_waic,bayes_n_obs
+CoxPH,0.8404,0.0978,0.0541,0.0665,0.1306,40.9864,28.945,8074984.341,0.8794,,,,,,,,,,
+CoxTimeVarying,0.8143,,,,,,,,,,,,,,,,,,
+WeibullAFT,0.843,0.0913,0.043,0.0529,0.1289,44.799,29.5304,22247247.0786,0.8704,,,,,,,,,,
+BayesWeibullAFT,0.8176,0.1074,0.0746,0.0869,0.1301,44.725,30.5843,2895693764.9071,,1.01,642.0,7.0,-1737.9055,8.3993,3475.811,0.5037,-1737.8502,3475.7004,480.0

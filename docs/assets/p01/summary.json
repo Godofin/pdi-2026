@@ -1,0 +1,23 @@
+{
+  "best": {
+    "algorithm": "kmeans",
+    "covariance_type": "-",
+    "k": 6,
+    "model_id_family": "kmeans",
+    "silhouette_score": 0.2496792532858896,
+    "davies_bouldin_index": 1.4046620858625045,
+    "calinski_harabasz": 2355.313716367299,
+    "inertia": 8396.648802461674,
+    "min_cluster_frac": 0.09273743016759776,
+    "bic": NaN,
+    "aic": NaN,
+    "converged": NaN
+  },
+  "stability_ari": [
+    0.993185736406966,
+    0.9975138939587272,
+    0.9965681760146631,
+    0.9966489657090142,
+    0.9956700866838147
+  ]
+}

@@ -1,0 +1,158 @@
+[
+ {
+  "run_id": "4a9b3de1e5934e889b7ae8e197926c66",
+  "run_name": "pca_umap_vs_autoencoder",
+  "params": {
+   "n_samples": "801",
+   "n_genes_raw": "20531",
+   "n_genes_selected": "5000",
+   "normalization": "none",
+   "var_min": "0.01",
+   "top_genes": "5000",
+   "val_size": "0.2",
+   "n_classes": "5",
+   "p_over_n": "25.6",
+   "umap_best_n_neighbors": "5"
+  },
+  "metrics": {
+   "genes_removed_low_variance": 571.0,
+   "pca_n_components_85pct": 169.0,
+   "pca_n_components_90pct": 253.0,
+   "pca_n_components_95pct": 381.0,
+   "pca_explained_variance_ratio": 0.0019357167061318007,
+   "pca_cumulative_variance": 0.7186504047042158,
+   "pca2_val_reconstruction_mse": 0.7421245720090731,
+   "pca10_val_reconstruction_mse": 0.47481911010285,
+   "pca50_val_reconstruction_mse": 0.36228942816185594,
+   "pca2_trustworthiness": 0.9047729167312343,
+   "pca2_knn_accuracy": 0.9450698757763976,
+   "pca2_silhouette_by_label": 0.5163626948514066,
+   "umap_trustworthiness": 0.9595440454365207,
+   "umap_knn_accuracy": 0.9962500000000001,
+   "umap_silhouette_by_label": 0.756269633769989
+  },
+  "duration_s": 247,
+  "children": [
+   {
+    "run_id": "5257d280116843cb9cccebd55294616c",
+    "run_name": "sparse_autoencoder_latent10",
+    "params": {
+     "latent_dim": "10",
+     "hidden": "[512, 128]",
+     "l1_latent": "0.001",
+     "lr": "0.001",
+     "weight_decay": "0.0001",
+     "dropout": "0.1",
+     "batch_size": "64",
+     "max_epochs": "400",
+     "patience": "30"
+    },
+    "metrics": {
+     "train_reconstruction_mse": 0.28669296503067015,
+     "val_reconstruction_mse": 0.43776801228523254,
+     "latent_l1": 0.82623992562294,
+     "lr": 0.000125,
+     "val_reconstruction_mse_best": 0.43546751141548157,
+     "pca10_val_reconstruction_mse": 0.47481911010285,
+     "mse_gain_vs_pca": 0.03935159868736843,
+     "epochs_trained": 82.0,
+     "latent_active_units": 10.0,
+     "trustworthiness": 0.9881879032495187,
+     "knn_accuracy": 0.9962500000000001,
+     "silhouette_by_label": 0.318045973777771,
+     "pca10_trustworthiness": 0.9802361942543177,
+     "pca10_knn_accuracy": 0.9962500000000001,
+     "pca10_silhouette_by_label": 0.4543599552649637
+    },
+    "duration_s": 56
+   },
+   {
+    "run_id": "7646baffe6fd435ca340d112b9c3d9cb",
+    "run_name": "sparse_autoencoder_latent2",
+    "params": {
+     "latent_dim": "2",
+     "hidden": "[512, 128]",
+     "l1_latent": "0.001",
+     "lr": "0.001",
+     "weight_decay": "0.0001",
+     "dropout": "0.1",
+     "batch_size": "64",
+     "max_epochs": "400",
+     "patience": "30"
+    },
+    "metrics": {
+     "train_reconstruction_mse": 0.4972886562347412,
+     "val_reconstruction_mse": 0.5405651926994324,
+     "latent_l1": 0.9919036209583283,
+     "lr": 1.953125e-06,
+     "val_reconstruction_mse_best": 0.5402930378913879,
+     "pca2_val_reconstruction_mse": 0.7421245720090731,
+     "mse_gain_vs_pca": 0.20183153411768517,
+     "epochs_trained": 233.0,
+     "latent_active_units": 2.0,
+     "trustworthiness": 0.9535955612454514,
+     "knn_accuracy": 0.9962500000000001,
+     "silhouette_by_label": 0.5742178559303284,
+     "pca2_trustworthiness": 0.9047729167312343,
+     "pca2_knn_accuracy": 0.9450698757763976,
+     "pca2_silhouette_by_label": 0.5163626948514066
+    },
+    "duration_s": 139
+   },
+   {
+    "run_id": "54f98a55964249d59720d9298e5c0066",
+    "run_name": "umap_nn50",
+    "params": {
+     "n_neighbors": "50",
+     "min_dist": "0.1",
+     "n_components": "2",
+     "metric": "euclidean",
+     "input": "PCA-50",
+     "random_state": "42"
+    },
+    "metrics": {
+     "trustworthiness": 0.9455815494794461,
+     "knn_accuracy": 0.9949999999999999,
+     "silhouette_by_label": 0.8192111253738403
+    },
+    "duration_s": 3
+   },
+   {
+    "run_id": "ede96e3f34544fdc8530d13366e94afc",
+    "run_name": "umap_nn15",
+    "params": {
+     "n_neighbors": "15",
+     "min_dist": "0.1",
+     "n_components": "2",
+     "metric": "euclidean",
+     "input": "PCA-50",
+     "random_state": "42"
+    },
+    "metrics": {
+     "trustworthiness": 0.952558188324429,
+     "knn_accuracy": 0.9949999999999999,
+     "silhouette_by_label": 0.8286258578300476
+    },
+    "duration_s": 3
+   },
+   {
+    "run_id": "2a7605eb6f774c08af14888d3cde6f96",
+    "run_name": "umap_nn5",
+    "params": {
+     "n_neighbors": "5",
+     "min_dist": "0.1",
+     "n_components": "2",
+     "metric": "euclidean",
+     "input": "PCA-50",
+     "random_state": "42"
+    },
+    "metrics": {
+     "trustworthiness": 0.9595440454365207,
+     "knn_accuracy": 0.9962500000000001,
+     "silhouette_by_label": 0.756269633769989
+    },
+    "duration_s": 20
+   }
+  ]
+ }
+]

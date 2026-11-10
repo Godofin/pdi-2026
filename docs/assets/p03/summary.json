@@ -1,0 +1,33 @@
+{
+  "PCA-2": {
+    "val_mse": 0.7421245720090731,
+    "trustworthiness": 0.9047729167312343,
+    "knn_accuracy": 0.9450698757763976,
+    "silhouette_by_label": 0.5163626948514066
+  },
+  "UMAP-2": {
+    "trustworthiness": 0.9595440454365207,
+    "knn_accuracy": 0.9962500000000001,
+    "silhouette_by_label": 0.756269633769989
+  },
+  "AE-2": {
+    "val_mse": 0.5402930378913879,
+    "pca_val_mse": 0.7421245720090731,
+    "trustworthiness": 0.9535955612454514,
+    "knn_accuracy": 0.9962500000000001,
+    "silhouette_by_label": 0.5742178559303284
+  },
+  "AE-10": {
+    "val_mse": 0.43546751141548157,
+    "pca_val_mse": 0.47481911010285,
+    "trustworthiness": 0.9881879032495187,
+    "knn_accuracy": 0.9962500000000001,
+    "silhouette_by_label": 0.318045973777771
+  },
+  "PCA-10": {
+    "val_mse": 0.47481911010285,
+    "trustworthiness": 0.9802361942543177,
+    "knn_accuracy": 0.9962500000000001,
+    "silhouette_by_label": 0.4543599552649637
+  }
+}

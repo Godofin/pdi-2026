@@ -1,0 +1,43 @@
+{
+  "best_params": {
+    "n_estimators": 813,
+    "learning_rate": 0.01949634229799957,
+    "num_leaves": 4,
+    "max_depth": 9,
+    "min_child_samples": 93,
+    "subsample": 0.8760111941015372,
+    "colsample_bytree": 0.9264572003227161,
+    "reg_alpha": 1.0968737901241133e-08,
+    "reg_lambda": 1.8417356834815304e-05,
+    "scale_pos_weight": 1.3813265363193152,
+    "subsample_freq": 1
+  },
+  "threshold": 0.16,
+  "calibration": "isotonic",
+  "feature_order_after_preprocess": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "tenure_bucket",
+    "contract_x_payment_x_internet",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "n_services",
+    "avg_charge_per_month",
+    "charge_delta"
+  ]
+}

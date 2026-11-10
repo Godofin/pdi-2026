@@ -1,0 +1,20 @@
+# Torch CPU (troque o índice por cu121/cu124 se tiver GPU NVIDIA)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.4
+
+numpy>=2.0
+pandas>=2.2
+matplotlib>=3.9
+scikit-learn>=1.6
+mlflow>=3.0
+lightgbm>=4.5
+optuna>=4.0
+shap>=0.46
+lifelines>=0.30
+pymc>=5.20
+nutpie>=0.13      # sampler NUTS compilado via numba (PyMC puro fica lento sem g++ no Windows)
+arviz>=0.20
+umap-learn>=0.5.7
+plotly>=5.24      # scatter interativo do projeto 3
+kaggle>=1.6
+requests

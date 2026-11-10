@@ -1,0 +1,271 @@
+[
+ {
+  "run_id": "5522955c23af4b8ead96f19cda8d6cc0",
+  "run_name": "survival_rul_FD001_FD003",
+  "params": {
+   "window": "15",
+   "stride": "10",
+   "censor_frac": "0.3",
+   "val_frac": "0.2",
+   "n_sensors_used": "16",
+   "n_features": "49",
+   "sensors_used": "s2,s3,s4,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s17,s20,s21",
+   "n_train_units": "160",
+   "n_val_units": "40",
+   "n_test_units": "200",
+   "n_train_snapshots": "3072",
+   "n_operating_regimes": "1",
+   "registered_model_choice": "CoxPH"
+  },
+  "metrics": {
+   "train_censoring_rate_units": 0.30000000000000004,
+   "km_median_life": 213.0,
+   "best_test_c_index": 0.8403506105284491,
+   "best_test_integrated_brier_score": 0.09783930728667467,
+   "best_test_rul_rmse": 40.986400183475496
+  },
+  "duration_s": 200,
+  "children": [
+   {
+    "run_id": "882cc33780b4470e9812b85b45b15db7",
+    "run_name": "bayesian_weibull_aft_pymc",
+    "params": {
+     "model": "BayesianWeibullAFT",
+     "features": "s17_mean,cycle,s9_mean,s3_mean,s4_mean,s2_mean",
+     "draws": "1000",
+     "tune": "1000",
+     "chains": "4",
+     "snapshots_per_unit": "3",
+     "priors": "beta~N(0,0.5); k~Gamma(2,1); a_fleet~N(mu_a,sigma_a); sigma_a~HN(0.5)",
+     "sampler": "nutpie",
+     "hierarchical": "True"
+    },
+    "metrics": {
+     "test_c_index": 0.81755079292699,
+     "test_integrated_brier_score": 0.10743985665634508,
+     "test_brier_t25": 0.07460932636090527,
+     "test_brier_t50": 0.08691826706658771,
+     "test_brier_t100": 0.130135505670308,
+     "test_rul_rmse": 44.72497515816422,
+     "test_rul_mae": 30.58429630141678,
+     "test_nasa_score": 2895693764.907068,
+     "bayes_rhat_max": 1.01,
+     "bayes_ess_bulk_min": 642.0,
+     "bayes_divergences": 7.0,
+     "bayes_elpd_loo": -1737.9055056098314,
+     "bayes_p_loo": 8.399324384856754,
+     "bayes_looic": 3475.8110112196628,
+     "bayes_pareto_k_max": 0.5037362670875054,
+     "bayes_elpd_waic": -1737.850202465526,
+     "bayes_waic": 3475.700404931052,
+     "bayes_n_obs": 480.0
+    },
+    "duration_s": 118
+   },
+   {
+    "run_id": "b776067b4ac446e981bba6bbf9ba6666",
+    "run_name": "weibull_aft",
+    "params": {
+     "model": "WeibullAFT",
+     "penalizer": "0.01"
+    },
+    "metrics": {
+     "test_c_index": 0.8430359223792876,
+     "test_integrated_brier_score": 0.09134059929973389,
+     "test_brier_t25": 0.04304343529652758,
+     "test_brier_t50": 0.05286855326830504,
+     "test_brier_t100": 0.12889128082087528,
+     "test_rul_rmse": 44.79895054363729,
+     "test_rul_mae": 29.530391079581157,
+     "test_nasa_score": 22247247.078579612,
+     "val_c_index": 0.8704162195538664,
+     "weibull_shape_rho": 2.7148654423927248,
+     "train_aic": 25109.41054509324
+    },
+    "duration_s": 1
+   },
+   {
+    "run_id": "eda977b77e9a414289c32264aca46fce",
+    "run_name": "cox_time_varying",
+    "params": {
+     "model": "CoxTimeVarying",
+     "n_intervals": "3232",
+     "penalizer_rescaled": "0.001732673267326733",
+     "l1_ratio": "0.9"
+    },
+    "metrics": {
+     "test_c_index": 0.814308152201449
+    },
+    "duration_s": 1
+   },
+   {
+    "run_id": "ee172501349e491eb476be5d4bdc495e",
+    "run_name": "coxph_best",
+    "params": {
+     "model": "CoxPH_ElasticNet",
+     "penalizer": "0.05",
+     "l1_ratio": "0.9"
+    },
+    "metrics": {
+     "test_c_index": 0.8403506105284491,
+     "test_integrated_brier_score": 0.09783930728667467,
+     "test_brier_t25": 0.05411374621856711,
+     "test_brier_t50": 0.06647697486796895,
+     "test_brier_t100": 0.13063614814654076,
+     "test_rul_rmse": 40.986400183475496,
+     "test_rul_mae": 28.945,
+     "test_nasa_score": 8074984.34096745,
+     "val_c_index": 0.8794354089358616,
+     "schoenfeld_min_p": 9.917417973588342e-21,
+     "schoenfeld_n_violations_p05": 24.0,
+     "schoenfeld_frac_violations_p05": 0.4897959183673469
+    },
+    "duration_s": 2
+   },
+   {
+    "run_id": "d9d93de12cdb429096c7d0a4ea00c710",
+    "run_name": "coxph_pen0.2_l10.9",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.2",
+     "l1_ratio": "0.9",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8724664440594445,
+     "n_nonzero_coefs": 8.0,
+     "train_partial_aic": 32859.64350744012
+    },
+    "duration_s": 10
+   },
+   {
+    "run_id": "de76c4c4f8ff4889bf4db6d5ea305094",
+    "run_name": "coxph_pen0.2_l10.5",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.2",
+     "l1_ratio": "0.5",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8782334498324451,
+     "n_nonzero_coefs": 15.0,
+     "train_partial_aic": 32169.39069418811
+    },
+    "duration_s": 10
+   },
+   {
+    "run_id": "542d749fb1b646fc8f5f3c48c695cb0f",
+    "run_name": "coxph_pen0.2_l10.0",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.2",
+     "l1_ratio": "0.0",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8762012097523545,
+     "n_nonzero_coefs": 49.0,
+     "train_partial_aic": 30629.45177700172
+    },
+    "duration_s": 3
+   },
+   {
+    "run_id": "f8d6a4e3f9de43929e944ce1c0a66ff2",
+    "run_name": "coxph_pen0.05_l10.9",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.05",
+     "l1_ratio": "0.9",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8794354089358616,
+     "n_nonzero_coefs": 24.0,
+     "train_partial_aic": 31267.12972839231
+    },
+    "duration_s": 10
+   },
+   {
+    "run_id": "d9d378ead3e34f7ea06c8b49da4a104c",
+    "run_name": "coxph_pen0.05_l10.5",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.05",
+     "l1_ratio": "0.5",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8785301928529893,
+     "n_nonzero_coefs": 32.0,
+     "train_partial_aic": 30907.57531793447
+    },
+    "duration_s": 9
+   },
+   {
+    "run_id": "5d9a1e7229244a85a226265df975c9bf",
+    "run_name": "coxph_pen0.05_l10.0",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.05",
+     "l1_ratio": "0.0",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8737553278860507,
+     "n_nonzero_coefs": 48.0,
+     "train_partial_aic": 30303.21125280249
+    },
+    "duration_s": 3
+   },
+   {
+    "run_id": "45b48e9f76f74edf84f7ea9ec3df87e0",
+    "run_name": "coxph_pen0.01_l10.9",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.01",
+     "l1_ratio": "0.9",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8736714005671089,
+     "n_nonzero_coefs": 38.0,
+     "train_partial_aic": 30442.87113321216
+    },
+    "duration_s": 9
+   },
+   {
+    "run_id": "6618ab6f7a094c01a366bd54dea4c70e",
+    "run_name": "coxph_pen0.01_l10.5",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.01",
+     "l1_ratio": "0.5",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.8728501118031784,
+     "n_nonzero_coefs": 39.0,
+     "train_partial_aic": 30333.249903750788
+    },
+    "duration_s": 9
+   },
+   {
+    "run_id": "c6c3e3b2386d4733a35eadaf08acc43b",
+    "run_name": "coxph_pen0.01_l10.0",
+    "params": {
+     "model": "CoxPH",
+     "penalizer": "0.01",
+     "l1_ratio": "0.0",
+     "robust_cluster": "unit_id"
+    },
+    "metrics": {
+     "val_c_index": 0.871684121550737,
+     "n_nonzero_coefs": 47.0,
+     "train_partial_aic": 30184.448955037853
+    },
+    "duration_s": 3
+   }
+  ]
+ }
+]
